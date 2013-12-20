@@ -1,23 +1,121 @@
 module.exports = function(grunt) {
 
-  // Project configuration.
-  grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-    uglify: {
-      options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-      },
-      build: {
-        src: 'src/<%= pkg.name %>.js',
-        dest: 'build/<%= pkg.name %>.min.js'
-      }
-    }
-  });
+	// Project configuration.
+	grunt.initConfig({
+		pkg: grunt.file.readJSON('package.json'),
+		
+		sass: {
+			dist: {
+				options: {
+					style: 'expanded'
+				},
+				files: {
+					'assets/css/app.css': '_assets/sass/app.scss'
+				}
+			}
+		},
 
-  // Load the plugin that provides the "uglify" task.
-  grunt.loadNpmTasks('grunt-contrib-uglify');
+		autoprefixer: {
+			options: {
+				browsers: ['last 2 version', 'ie 8', 'ie 7']
+			},
+			single_file: {
+				options: {
+					expand: true,
+					flatten: true
+				},
+				src: 'assets/css/app.css',
+				dest: 'assets/css/appprefixed.css'
+			}
+		},
 
-  // Default task(s).
-  grunt.registerTask('default', ['uglify']);
+		cssmin: {
+			combine: {
+				files: {
+					'assets/css/appmin.css': ['assets/css/appprefixed.css']
+				}
+			}
+		},
+
+		jshint: {
+			beforeconcat: ['_assets/js/*.js']
+		},
+
+		concat: {
+			dist: {
+				src: [
+					'_assets/js/app.js'
+				],
+				dest: 'assets/js/app.js'
+			}
+		},
+
+		uglify: {
+			build: {
+				src: 'assets/js/app.js',
+				dest: 'assets/js/app.min.js'
+			}
+		},
+
+		imagemin: {
+			dynamic: {
+				files: [{
+					expand: true,
+					cwd: 'assets/img',
+					src: ['**/*.{png,jpg,gif}'],
+					dest: 'assets/img'
+				}]
+			}
+		},
+
+		watch: {
+			options: {
+				livereload: true,
+			},
+			scripts: {
+				files: ['_assets/js/*.js'],
+				tasks: ['concat', 'uglify', 'jshint'],
+				options: {
+					spawn: false,
+				}
+			},
+			css: {
+				files: ['_assets/sass/*.scss'],
+				tasks: ['sass', 'autoprefixer', 'cssmin'],
+				options: {
+					spawn: false,
+				}
+			},
+			images: {
+				files: ['assets/img/**/*.{png,jpg,gif}', 'assets/img/*.{png,jpg,gif}'],
+				tasks: ['imagemin'],
+				options: {
+					spawn: false,
+				}
+			}
+		},
+
+		connect: {
+			server: {
+				options: {
+					port: 9001,
+					base: './'
+				}
+			}
+		},
+		
+		bower: {
+			install: {
+			}
+		}
+
+	});
+
+	require('load-grunt-tasks')(grunt);
+
+	// Default Task is basically a rebuild
+	grunt.registerTask('default', ['concat', 'uglify', 'jshint', 'sass', 'autoprefixer', 'cssmin', 'imagemin']);
+
+	grunt.registerTask('serve', ['connect', 'watch']);
 
 };

@@ -13,5 +13,8 @@
     "grunt-autoprefixer": "~0.4.1",
     "grunt-contrib-jshint": "~0.7.2",
     "grunt-contrib-nodeunit": "~0.2.0"
+  },
+  "dependencies": {
+    "load-grunt-tasks": "~0.2.0"
   }
 }

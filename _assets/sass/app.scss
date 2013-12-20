@@ -1,0 +1,38 @@
+/*!
+ * Gruntplate
+ * - Short description
+ * 
+ * Author: Ruben Leikarnes
+ * github.com/rub1/gruntplate
+ */
+
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+/**
+ * Imports
+ */
+
+@import "_lib/normalize";
+@import "_mixins/media-queries";
+
+/**
+ * Main styling
+ */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+  margin: 0 auto;
+  width: 960px;
+}
+
+@include tablet-landscape-and-below {
+	body {
+		width: 90%;
+	}
+}
