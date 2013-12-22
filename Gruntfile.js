@@ -44,6 +44,7 @@ module.exports = function(grunt) {
 		concat: {
 			dist: {
 				src: [
+					'_assets/js/lib/*.js',
 					'_assets/js/app.js'
 				],
 				dest: 'assets/js/app.js'
