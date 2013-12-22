@@ -1,0 +1,11 @@
+a {
+	color: $link-color;
+	
+	&:visited {
+		color: darken($link-color, 25%);
+	}
+	
+	&:hover {
+		color: lighten($link-color, 15%);
+	}
+}

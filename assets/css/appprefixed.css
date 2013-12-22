@@ -434,7 +434,7 @@ table {
 }
 
 /**
- * Main styling
+ * Body styling
  */
 
 * {
@@ -444,14 +444,15 @@ table {
 
 html {
   color: #333333;
-  font: 100% Helvetica, sans-serif;
+  font: 16 Helvetica, sans-serif;
+  line-height: 1.5rem;
   vertical-align: baseline;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
 body {
-  margin: 0 auto;
+  margin: 1.5rem auto;
   width: 960px;
 }
 
@@ -459,4 +460,35 @@ body {
   body {
     width: 90%;
   }
+}
+
+/**
+ * Default margin for all (normal) html elements
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+ul,
+ol,
+table {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+a {
+  color: #2e2ef1;
+}
+
+a:visited {
+  color: #0a0a95;
+}
+
+a:hover {
+  color: #7676f6;
 }

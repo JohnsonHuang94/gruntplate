@@ -8,6 +8,9 @@
 
 $font-stack:    Helvetica, sans-serif;
 $primary-color: #333;
+$link-color: 	#2e2ef1;
+$font-size: 	16;
+$default-spacing-unit: 1.5;
 
 /**
  * Imports
@@ -15,30 +18,6 @@ $primary-color: #333;
 
 @import "_lib/normalize";
 @import "_mixins/media-queries";
-
-/**
- * Main styling
- */
-
-* {
-	box-sizing: border-box;
-}
-
-html {
-	color: $primary-color;
-	font: 100% $font-stack;
-	vertical-align: baseline;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-}
-
-body {
-  margin: 0 auto;
-  width: 960px;
-}
-
-@include tablet-landscape-and-below {
-	body {
-		width: 90%;
-	}
-}
+@import "_base/body";
+@import "_base/margin";
+@import "_base/typography";

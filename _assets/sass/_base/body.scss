@@ -1,0 +1,27 @@
+/**
+ * Body styling
+ */
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	color: $primary-color;
+	font: $font-size $font-stack;
+	line-height: $default-spacing-unit + rem;
+	vertical-align: baseline;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: $default-spacing-unit + rem auto;
+  width: 960px;
+}
+
+@include tablet-landscape-and-below {
+	body {
+		width: 90%;
+	}
+}
