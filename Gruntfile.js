@@ -1,6 +1,5 @@
 module.exports = function(grunt) {
 
-	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		
@@ -103,13 +102,7 @@ module.exports = function(grunt) {
 					base: './'
 				}
 			}
-		},
-		
-		bower: {
-			install: {
-			}
 		}
-
 	});
 
 	require('load-grunt-tasks')(grunt);
