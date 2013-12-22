@@ -24,9 +24,15 @@ $primary-color: #333;
 	box-sizing: border-box;
 }
 
+html {
+	color: $primary-color;
+	font: 100% $font-stack;
+	vertical-align: baseline;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}
+
 body {
-  font: 100% $font-stack;
-  color: $primary-color;
   margin: 0 auto;
   width: 960px;
 }

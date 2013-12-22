@@ -442,9 +442,15 @@ table {
   box-sizing: border-box;
 }
 
-body {
-  font: 100% Helvetica, sans-serif;
+html {
   color: #333333;
+  font: 100% Helvetica, sans-serif;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
   margin: 0 auto;
   width: 960px;
 }
