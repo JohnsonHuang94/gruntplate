@@ -24,14 +24,14 @@ module.exports = function(grunt) {
 					flatten: true
 				},
 				src: 'assets/css/app.css',
-				dest: 'assets/css/appprefixed.css'
+				dest: 'assets/css/app.css'
 			}
 		},
 
 		cssmin: {
 			combine: {
 				files: {
-					'assets/css/appmin.css': ['assets/css/appprefixed.css']
+					'assets/css/appmin.css': ['assets/css/app.css']
 				}
 			}
 		},
@@ -44,7 +44,7 @@ module.exports = function(grunt) {
 			dist: {
 				src: [
 					'components/jquery/jquery.min.js',
-					'_assets/js/app.js'
+					'_assets/js/*.js'
 				],
 				dest: 'assets/js/app.js'
 			}
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
 		uglify: {
 			build: {
 				src: 'assets/js/app.js',
-				dest: 'assets/js/app.min.js'
+				dest: 'assets/js/app.js'
 			}
 		},
 
