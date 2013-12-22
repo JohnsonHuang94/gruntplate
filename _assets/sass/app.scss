@@ -17,7 +17,7 @@ $default-spacing-unit: 1.5;
  */
 
 @import "_mixins/media-queries";
-@import "_lib/normalize";
+@import "../../components/normalize-scss/normalize";
 @import "_base/clearfix";
 @import "_base/body";
 @import "_base/margin";

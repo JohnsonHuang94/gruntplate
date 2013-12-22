@@ -1,0 +1,10 @@
+{
+  "name": "init",
+  "version": "1.0.2",
+  "main": "",
+  "ignore": [],
+  "dependencies": {
+    "jquery": "1.10.2",
+    "normalize-scss": "~2.1.2"
+  }
+}
