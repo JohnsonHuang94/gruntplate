@@ -437,7 +437,9 @@ table {
  * Body styling
  */
 
-* {
+*,
+*:before,
+*:after {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -472,11 +474,17 @@ h3,
 h4,
 h5,
 h6,
-p,
-blockquote,
+hgroup,
 ul,
 ol,
-table {
+dl,
+blockquote,
+p,
+address,
+table,
+fieldset,
+figure,
+pre {
   margin-top: 0;
   margin-bottom: 1.5rem;
 }

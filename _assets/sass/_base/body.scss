@@ -2,9 +2,11 @@
  * Body styling
  */
 
-* {
-	box-sizing: border-box;
-}
+ *, *:before, *:after {
+	-webkit-box-sizing: border-box; 
+	   -moz-box-sizing: border-box; 
+			box-sizing: border-box;
+  }
 
 html {
 	color: $primary-color;
@@ -16,8 +18,8 @@ html {
 }
 
 body {
-  margin: $default-spacing-unit + rem auto;
-  width: 960px;
+	margin: $default-spacing-unit + rem auto;
+	width: 960px;
 }
 
 @include tablet-landscape-and-below {
